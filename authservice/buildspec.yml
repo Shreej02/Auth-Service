@@ -5,15 +5,18 @@ phases:
       java: corretto11
   pre_build:
     commands:
+    - echo "pre_build"
     - echo Nothing to do in the pre_build phase...
   build:
     commands:
+    - echo "build"
     - echo Build started on `date`
     - mvn install
     - mvn compile
     - mvn package
   post_build:
     commands:
+    - echo "post_build"
     - echo Build completed on `date`
     - mv target/*.jar authservice-app.jar
     - dir
